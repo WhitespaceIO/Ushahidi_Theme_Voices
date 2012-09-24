@@ -1,6 +1,3 @@
-Ushahidi Theme Voices
-=====================
-
 Theme Name: Voices
 Description: Theme for mapping the voice of the people.
 Version: 1.0
