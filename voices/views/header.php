@@ -4,6 +4,7 @@
     <title>
         <?php
             $categories = Kohana::config('settings.categories');
+            $category = $categories[0];
             $category_title = null;
             $incident_title = null;
             if (isset($_GET["c"])) {
@@ -11,6 +12,7 @@
                 foreach ($categories as $cat) {
                     if ($cat == $c) {
                         $category = $cat;
+                        $category_title = $category->category_title;
                         break;
                     }
                 }
@@ -132,7 +134,6 @@
         <?php } ?>
     </li>
     <?php
-        $category = $categories[0];
         if ($category != null) {
             ?>
             <li id="header-question">

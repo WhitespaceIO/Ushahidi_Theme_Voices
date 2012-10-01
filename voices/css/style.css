@@ -473,6 +473,7 @@ ol.vertical li a {
     text-align:center;
     text-transform:uppercase;
     font-weight:bold;
+    margin-bottom:30px;
 }
 
 #main-top .report-answer,
@@ -560,10 +561,13 @@ ol.vertical li a {
 
 #main-categories {
     margin-top:20px;
-    font-size:24px;
+    font-size:18px;
 }
 
-.main-top
+#main-categories .box,
+#main-categories .bubble{
+    padding-left:5px;
+}
 
 /* ############################### LINKS ############################### */
 
