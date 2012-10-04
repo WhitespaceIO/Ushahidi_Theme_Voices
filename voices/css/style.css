@@ -429,7 +429,10 @@ ol.vertical li a {
 }
 
 #submit-map {
-    margin-top:20px;
+    float:right;
+    width:73%;
+    margin:0;
+    padding:0;
 }
 
 #submit-photo {
@@ -448,115 +451,12 @@ ol.vertical li a {
 
 /* ############################### MAIN ############################### */
 
-#main-stats:after,
-#main-top:after{
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-    padding:0;
-    margin-bottom:20px;
-}
-
-#main-stats {
-    text-align: center;
-    font-size: 20px;
-}
-
-#main-top {
-     text-align: left;
-}
-
-#main-action {
-    font-size:22px;
-    text-align:center;
-    text-transform:uppercase;
-    font-weight:bold;
-    margin-bottom:30px;
-}
-
-#main-top .report-answer,
-#main-top .report-author {
-    float:left;
-    margin:0;
-    margin-left:5px;
-}
-
-#main-top .report-answer {
-}
-
-#main-top .report-author {
-    margin-top:3px;
-    margin-right:50px;
-}
-
-#main-top .report-rating,
-#main-top .report-comments {
-    float:right;
-    font-size:16px;
-    width:20px;
-    height:20px;
-    padding:3px 15px 0px 0px;
-    background-position:15px 0px;
-    background-repeat:no-repeat;
-    margin:0 5px 0 5px;
-    color:#848484;
-}
-
-#main-top .report-rating {
-    background-image:url("../images/rating.png");
-}
-
-#main-top .report-comments {
-    background-image:url("../images/comments.png");
-}
-
-#main-top .main-star {
-    position:absolute;
-    left:-17px;
-    top:-17px;
-    width:30px;
-    height:30px;
-    padding-top:13px;
-    font-weight:bold;
-    text-align:center;
-    color:black;
-    font-size:14px;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-image:url("../images/badge.png");
-}
-
-.main-column-left,
-.main-column-middle,
-.main-column-right {
-    position: relative;
-    width:30%;
-    float:left;
-    margin-left:0;
-    margin-right:0;
-    padding-left:0;
-    padding-right:0;
-}
-.main-column-left {
-
-}
-
-.main-column-middle {
-    margin-left:4.5%;
-    margin-right:4.5%;
-}
-
-.main-column-right {
-    float:right;
-}
-
 #main-welcome {
-    font-size:24px;
+    font-size:18px;
     color:#848484;
     margin-bottom: 20px;
     text-align:center;
+    font-weight:normal;
 }
 
 #main-categories {
@@ -564,10 +464,204 @@ ol.vertical li a {
     font-size:18px;
 }
 
-#main-categories .box,
-#main-categories .bubble{
-    padding-left:5px;
+.main-category {
+    margin-bottom:20px;
+    padding-left:10px;
 }
+
+.main-category ul {
+    margin-bottom:10px;
+}
+
+.main-category li {
+    margin-top:10px;
+    margin-left:10px;
+    margin-bottom:12px;
+}
+
+.main-category .main-number {
+    margin-right:10px;
+    font-size:15px;
+    font-weight:bold;
+    text-align:center;
+    padding:2px 5px 2px 5px;
+    background-color: #E6E6E6;
+    border: 2px solid #D8D8D8;
+    border-radius:50%;
+}
+
+.main-question  {
+
+}
+
+.main-question a {
+    font-size:22px;
+    font-weight:bold;
+}
+
+.main-first a {
+     font-style:italic;
+}
+
+.main-add a {
+    float:right;
+    color:#424242;
+    margin-top:3px;
+    margin-right:3px;
+    font-size:16px;
+}
+
+.main-stats {
+    margin-top:5px;
+}
+
+.main-stats a {
+    color:#848484;
+    font-size:16px;
+}
+
+.main-category .report-answer {
+    margin-right:5px;
+    font-size:18px;
+}
+
+.main-category .report-author {
+    margin-right:10px;
+    font-size:16px;
+}
+
+.main-category .report-rating,
+.main-category .report-comments {
+    font-size:16px;
+    width:20px;
+    height:20px;
+    padding:3px 25px 0 0;
+    background-position:15px 0;
+    background-repeat:no-repeat;
+    margin-right:5px;
+    color:#848484;
+}
+
+.main-category .report-rating {
+    background-image:url("../images/rating.png");
+}
+
+.main-category .report-comments {
+    background-image:url("../images/comments.png");
+}
+
+.main-category .main-more {
+    margin-top:5px;
+    margin-left:40px;
+}
+
+.main-category .main-more a {
+    color:#848484;
+    font-size:15px;
+}
+
+/*.main-star {*/
+    /*width:30px;*/
+    /*height:30px;*/
+    /*padding-top:-10px;*/
+    /*font-weight:bold;*/
+    /*text-align:center;*/
+    /*color:black;*/
+    /*font-size:14px;*/
+    /*background-position:center center;*/
+    /*background-repeat:no-repeat;*/
+    /*background-image:url("../images/badge.png");*/
+/*}*/
+
+/*#main-stats:after,*/
+/*#main-top:after{*/
+    /*content: ".";*/
+    /*display: block;*/
+    /*height: 0;*/
+    /*clear: both;*/
+    /*visibility: hidden;*/
+    /*padding:0;*/
+    /*margin-bottom:20px;*/
+/*}*/
+
+/*#main-stats {*/
+    /*text-align: center;*/
+    /*font-size: 20px;*/
+/*}*/
+
+/*#main-top {*/
+     /*text-align: left;*/
+/*}*/
+
+/*#main-action {*/
+    /*font-size:22px;*/
+    /*text-align:center;*/
+    /*text-transform:uppercase;*/
+    /*font-weight:bold;*/
+    /*margin-bottom:30px;*/
+/*}*/
+
+/*#main-top .report-answer,*/
+/*#main-top .report-author {*/
+    /*float:left;*/
+    /*margin:0;*/
+    /*margin-left:5px;*/
+/*}*/
+
+/*#main-top .report-answer {*/
+/*}*/
+
+/*#main-top .report-author {*/
+    /*margin-top:3px;*/
+    /*margin-right:50px;*/
+/*}*/
+
+/*#main-top .report-rating,*/
+/*#main-top .report-comments {*/
+    /*float:right;*/
+    /*font-size:16px;*/
+    /*width:20px;*/
+    /*height:20px;*/
+    /*padding:3px 15px 0px 0px;*/
+    /*background-position:15px 0px;*/
+    /*background-repeat:no-repeat;*/
+    /*margin:0 5px 0 5px;*/
+    /*color:#848484;*/
+/*}*/
+
+/*#main-top .report-rating {*/
+    /*background-image:url("../images/rating.png");*/
+/*}*/
+
+/*#main-top .report-comments {*/
+    /*background-image:url("../images/comments.png");*/
+/*}*/
+
+
+
+/*.main-column-left,*/
+/*.main-column-middle,*/
+/*.main-column-right {*/
+    /*position: relative;*/
+    /*width:30%;*/
+    /*float:left;*/
+    /*margin-left:0;*/
+    /*margin-right:0;*/
+    /*padding-left:0;*/
+    /*padding-right:0;*/
+/*}*/
+/*.main-column-left {*/
+
+/*}*/
+
+/*.main-column-middle {*/
+    /*margin-left:4.5%;*/
+    /*margin-right:4.5%;*/
+/*}*/
+
+/*.main-column-right {*/
+    /*float:right;*/
+/*}*/
 
 /* ############################### LINKS ############################### */
 
@@ -862,11 +956,6 @@ form span.dynamic a.dynamic-remove {
     top:0;
     right:25px;
     width:10px;
-}
-
-form div.report-map {
-    float:left;
-    width:73%;
 }
 
 /* ############################### REPORTS ############################### */
@@ -1403,7 +1492,7 @@ div.report-map,
 div.map-holder,
 div.alert-map {
     border: #999 1px solid;
-    width: 100%;
+    width: 100% !important;
     height: 175px;
     position:relative;
     overflow:hidden;

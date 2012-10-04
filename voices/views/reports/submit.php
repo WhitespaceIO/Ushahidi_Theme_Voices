@@ -23,15 +23,17 @@
         <input type="hidden" name="incident_ampm" id="incident_ampm" value="<?php echo date("a"); ?>" />
         <fieldset>
             <label><?php echo $category->category_title; ?></label>
-            <span><?php print form::input('incident_title', $form['incident_title'], ' class="text" placeholder="this incredibly brilliant idea!" '); ?></span>
+            <span><?php print form::input('incident_title', $form['incident_title'], ' class="text" placeholder="describe your idea." '); ?></span>
         </fieldset>
         <fieldset>
             <label><?php echo $category->category_description; ?></label>
-            <span><?php print form::textarea('incident_description', $form['incident_description'], ' class="text" placeholder="it will be great and awesome!" ') ?></span>
+            <span><?php print form::textarea('incident_description', $form['incident_description'], ' class="text" placeholder="explain your reasoning." ') ?></span>
         </fieldset>
         <fieldset>
             <label>Location...</label>
-            <div id="divMap" class="report-map"></div>
+            <div id="submit-map">
+                <div id="divMap" class="report-map"></div>
+            </div>
         </fieldset>
         <fieldset id="submit-photo">
             <label>Photos...</label>
@@ -126,7 +128,7 @@
         </fieldset>
         <fieldset>
             <label>Name...</label>
-            <span><?php print form::input('location_name', $form['location_name'], ' class="text" placeholder="and finally your name" '); ?></span>
+            <span><?php print form::input('location_name', $form['location_name'], ' class="text" placeholder="enter your name" '); ?></span>
         </fieldset>
         <fieldset>
             <label> </label>
@@ -141,7 +143,8 @@
     ?>
     <?php endif; ?>
     <?php if ($site_submit_report_message != ''): ?>
-    <div class="box green shadow">
+    <br/>
+    <div class="box shadow">
         <h3><?php echo $site_submit_report_message; ?><h3>
     </div>
     <?php endif; ?>
