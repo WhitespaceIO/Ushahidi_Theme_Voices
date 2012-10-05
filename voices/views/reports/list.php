@@ -72,7 +72,9 @@
                     <div class="clear"></div>
                 </div>
                 <div class="report-author">
-                    <a class="box" title="<?php echo $user_tooltip; ?>" href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>"> </a>
+                    <a class="box" title="<?php echo $user_tooltip; ?>" href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>">
+                        <?php echo $location_name; ?>
+                    </a>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -98,18 +100,16 @@
                 if ($incident->media->count()) {
                     foreach ($incident->media as $photo) {
                         if ($photo->media_thumb) {
-                            $incident_thumb = url::convert_uploaded_to_abs($photo->media_medium);
+                            $incident_thumb = url::convert_uploaded_to_abs($photo->media_thumb);
                             $thumbnails++;
                         ?>
                             <div class="report-thumbnail shadow">
-                                <a title="<?php echo $incident_tooltip; ?>"
-                                   href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>">
-                                    <img src="<?php echo $incident_thumb; ?>" />
-<!--                                    <div class="report-title">-->
-<!--                                        --><?php //echo $category_title; ?>
-<!--                                        <i>--><?php //echo $incident_title; ?><!--</i>-->
-<!--                                    </div>-->
-                                </a>
+                                <div class="report-thumbnail-frame">
+                                    <a title="<?php echo $incident_tooltip; ?>"
+                                       href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>">
+                                        <img src="<?php echo $incident_thumb; ?>" />
+                                    </a>
+                                </div>
                             </div>
                         <?php
                         }

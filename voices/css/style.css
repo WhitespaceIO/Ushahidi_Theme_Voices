@@ -449,6 +449,12 @@ ol.vertical li a {
     background-image:url("../images/close.png");
 }
 
+.submit-message {
+    text-align: center;
+    font-weight:normal;
+    font-size:20px;
+}
+
 /* ############################### MAIN ############################### */
 
 #main-welcome {
@@ -508,7 +514,7 @@ ol.vertical li a {
     color:#424242;
     margin-top:3px;
     margin-right:3px;
-    font-size:16px;
+    font-size:18px;
 }
 
 .main-stats {
@@ -958,6 +964,14 @@ form span.dynamic a.dynamic-remove {
     width:10px;
 }
 
+form span.required {
+    color: #CC1830;
+    display:inline;
+    font-size:22px;
+    font-weight:bold;
+    padding-top:5px;
+}
+
 /* ############################### REPORTS ############################### */
 
 .report-top {
@@ -1047,21 +1061,35 @@ div.report-item .report-image {
 .report-thumbnail {
     position: relative;
     float:left;
-    max-width:200px;
-    min-width:200px;
-    height:125px;
-    min-height:125px;
-    max-height:125px;
+    max-width:100px;
+    min-width:100px;
+    height:75px;
+    min-height:75px;
+    max-height:75px;
     overflow: hidden;
     margin-right:20px;
     margin-bottom:20px;
-    background-color:white;
+    background-color:black;
     text-align:center;
+    vertical-align:middle;
+}
+
+.report-thumbnail-frame {
+    display: table;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.report-thumbnail a {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .report-thumbnail img {
-    width:200px;
-    margin:0;
+    width:100px;
 }
 
 .report-thumbnail .report-title {
@@ -1080,7 +1108,7 @@ div.report-item .report-image {
     width:320px;
     height:320px;
     text-align:center;
-    margin-top:30px;
+    margin-top:29px;
     margin-left:auto;
     margin-right:auto;
     font-size:14px;
@@ -1090,18 +1118,18 @@ div.report-item .report-image {
 }
 
 .report-author {
+    margin-left:10px;
     color:#848484;
     font-size:16px;
 }
 
 .report-author a {
-    margin-top:28px;
+    margin-top:30px;
     margin-bottom:10px;
     text-align: center;
     float:left;
-    width:40px;
-    height:40px;
-    background-position:center center;
+    padding-left:28px;
+    background-position:4px 4px;
     background-repeat:no-repeat;
     background-image:url("../images/user.png");
 }

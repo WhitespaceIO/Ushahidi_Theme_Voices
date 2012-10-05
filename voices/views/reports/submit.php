@@ -11,7 +11,7 @@
         }
         ?>
         <a id="submit-close" title="Close" href="<?php echo url::site(); ?>reports?c=<?php echo $category; ?>#list"> </a>
-        <?php print form::open(NULL, array('enctype' => 'multipart/form-data', 'id' => 'reportForm', 'name' => 'reportForm', 'class' => 'gen_forms')); ?>
+        <?php print form::open(NULL, array('enctype' => 'multipart/form-data', 'id' => 'reportForm', 'name' => 'reportForm', 'class' => 'gen_forms', 'onSubmit' => 'return validateFields();')); ?>
         <input type="hidden" name="latitude" id="latitude" value="<?php echo $form['latitude']; ?>">
         <input type="hidden" name="longitude" id="longitude" value="<?php echo $form['longitude']; ?>">
         <input type="hidden" name="country_name" id="country_name" value="<?php echo $form['country_name']; ?>" />
@@ -22,18 +22,22 @@
         <input type="hidden" name="incident_minute" id="incident_minute" value="<?php echo date("i"); ?>" />
         <input type="hidden" name="incident_ampm" id="incident_ampm" value="<?php echo date("a"); ?>" />
         <fieldset>
-            <label><?php echo $category->category_title; ?></label>
+            <label><span class="required">*</span><?php echo $category->category_title; ?></label>
             <span><?php print form::input('incident_title', $form['incident_title'], ' class="text" placeholder="describe your idea." '); ?></span>
         </fieldset>
         <fieldset>
-            <label><?php echo $category->category_description; ?></label>
+            <label><span class="required">*</span><?php echo $category->category_description; ?></label>
             <span><?php print form::textarea('incident_description', $form['incident_description'], ' class="text" placeholder="explain your reasoning." ') ?></span>
         </fieldset>
         <fieldset>
-            <label>Location...</label>
+            <label><span class="required">*</span>Location...</label>
             <div id="submit-map">
                 <div id="divMap" class="report-map"></div>
             </div>
+        </fieldset>
+        <fieldset>
+            <label><span class="required">*</span>Name...</label>
+            <span><?php print form::input('location_name', $form['location_name'], ' class="text" placeholder="enter your name" '); ?></span>
         </fieldset>
         <fieldset id="submit-photo">
             <label>Photos...</label>
@@ -127,10 +131,6 @@
             ?>
         </fieldset>
         <fieldset>
-            <label>Name...</label>
-            <span><?php print form::input('location_name', $form['location_name'], ' class="text" placeholder="enter your name" '); ?></span>
-        </fieldset>
-        <fieldset>
             <label> </label>
             <span><input name="submit" type="submit" class="button" value="Add Your Voice" /></span>
         </fieldset>
@@ -144,8 +144,8 @@
     <?php endif; ?>
     <?php if ($site_submit_report_message != ''): ?>
     <br/>
-    <div class="box shadow">
-        <h3><?php echo $site_submit_report_message; ?><h3>
+    <div class="box shadow submit-message">
+        <?php echo $site_submit_report_message; ?>
     </div>
     <?php endif; ?>
 </div>
@@ -167,5 +167,16 @@
     }
     function removeFormField(id) {
         $(id).remove();
+    }
+    function validateFields() {
+        var isValid = true;
+        $("#incident_title, #incident_description, #location_name").each(function() {
+            if ($(this).val() == '') {
+                $(this).css("border-color", "#F5A9BC");
+                $(this).css("background-color", "#FBEFF2");
+                isValid = false;
+            }
+        });
+        return isValid;
     }
 </script>

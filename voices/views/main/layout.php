@@ -6,7 +6,7 @@
     <?php } ?>
     <?php
     $questions = 3;
-    $answers = 5;
+    $answers = 3;
     $categories = Kohana::config('settings.categories');
     $incidents = Kohana::config('settings.incidents');
     $comments = Kohana::config('settings.comments');

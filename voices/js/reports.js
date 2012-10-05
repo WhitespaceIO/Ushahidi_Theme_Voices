@@ -320,7 +320,6 @@ function showReportData(event) {
     }
     var content = "<div id=\"popup\">";
     var incident = event.feature.attributes;
-    //debugger;
     content += "<ul class='vertical vote'>";
     content += "<li class='vote-up'><a title='Vote Up' href=\"javascript:vote('" + incident.id + "','add','original','popup-vote-" + incident.id + "')\"></a></li>";
     content += "<li class='vote-value' id='popup-vote-" + incident.id + "'>"  + incident.rating + "</li>";
@@ -329,10 +328,12 @@ function showReportData(event) {
 
     if (incident.photos && incident.photos.length > 0) {
         var photo = incident.photos[0];
-        content += "<div class=\"popup-image\">";
-        content += "<a title=\"" + incident.title + "\" href=\"" + $PHRASES.server + "reports/view/" + incident.id + "\">";
-        content += "<img src=\"" + $PHRASES.server + "/media/uploads/" + photo.thumb + "\" height=\"59\" width=\"89\" />";
-        content += "</a></div>";
+        if (typeof photo !== "undefined" && typeof photo.thumb !== "undefined") {
+            content += "<div class=\"popup-image\">";
+            content += "<a title=\"" + incident.title + "\" href=\"" + $PHRASES.server + "reports/view/" + incident.id + "\">";
+            content += "<img src=\"" + $PHRASES.server + "/media/uploads/" + photo.thumb + "\" height=\"59\" width=\"89\" />";
+            content += "</a></div>";
+        }
     }
     content += "<div class='popup-primary'>";
     content += "<a title=\"" + incident.title + "\" href=\"" + $PHRASES.server + "reports/view/" + incident.id + "\">";
@@ -343,43 +344,14 @@ function showReportData(event) {
         content += "<span class='popup-answer'>" + incident.title + "</span>";
     }
     content += "</a></div>";
-//    content += "<div id='popup-secondary'>";
-//    $.each(incident.categories, function(i, category) {
-//        content += "<span class='popup-question'>" + category.description + "</span>";
-//    });
-//    if (incident.description && incident.description!='') {
-//        content += "<span class='popup-answer'>" + incident.description + "</span>";
-//    }
-//    content += "</div>";
     content += "<div class='popup-about'>";
     if (incident.location && incident.location != '') {
         content += "<span class='popup-location'>" + incident.location + "</span>";
     }
-//    if (incident.time && incident.time != '') {
-//        content += " at <span class='popup-time'>" + incident.time + "</span>";
-//    }
     if (incident.date && incident.date != '') {
         content += " on <span class='popup-date'>" + incident.date + "</span>";
     }
     content += "</div>";
-//    if (incident.comments && incident.comments != '') {
-//        content += "<div class='popup-comments'>";
-//        content += incident.comments;
-//        if (incident.comments == 1) {
-//            content += " comment ";
-//        }
-//        else {
-//            content += " comments ";
-//        }
-//        content += incident.ratings;
-//        if (incident.ratings == 1) {
-//            content += " votes";
-//        }
-//        else {
-//            content += " vote";
-//        }
-//        content += " </div>";
-//    }
     content += "<div style=\"clear:both;\"></div></div>";
     popup = new OpenLayers.Popup.FramedCloud("popup",
         event.feature.geometry.getBounds().getCenterLonLat(),

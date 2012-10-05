@@ -137,17 +137,17 @@
         if ($category != null) {
             ?>
             <li id="header-question">
-                <a class="box" title="<?php echo $category->category_title; ?>" href="<?php echo url::site(); ?>reports/submit?c=<?php echo $category; ?>"><?php echo $category->category_title; ?></a>
+                <a class="box" title="<?php echo $category->category_title; ?>" href="<?php echo url::site(); ?>reports?c=<?php echo $category; ?>"><?php echo $category->category_title; ?></a>
             </li>
             <?php } ?>
         <li id="header-add">
-            <a class="box" title="Add" href="<?php echo url::site(); ?>reports/submit?c=<?php echo $category; ?>"> </a>
+            <a class="box" title="Add Your Voice" href="<?php echo url::site(); ?>reports/submit?c=<?php echo $category; ?>"> </a>
         </li>
     </ul>
 
     <ul class="top right horizontal">
-        <li id="header-list" class="box"><a title="List" href="<?php echo url::site(); ?>reports?c=<?php echo $category; ?>#list"> </a></li>
-        <li id="header-map" class="box"><a title="Map" href="<?php echo url::site(); ?>reports?c=<?php echo $category; ?>#map"> </a></li>
-        <li id="header-gallery" class="box"><a title="Gallery" href="<?php echo url::site(); ?>reports?c=<?php echo $category; ?>#gallery"> </a></li>
+        <li id="header-list" class="box"><a title="List View" href="<?php echo url::site(); ?>reports?c=<?php echo $category; ?>#list"> </a></li>
+        <li id="header-map" class="box"><a title="Map View" href="<?php echo url::site(); ?>reports?c=<?php echo $category; ?>#map"> </a></li>
+        <li id="header-gallery" class="box"><a title="Gallery View" href="<?php echo url::site(); ?>reports?c=<?php echo $category; ?>#gallery"> </a></li>
     </ul>
 
